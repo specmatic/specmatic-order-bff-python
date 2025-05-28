@@ -6,9 +6,9 @@
 
 This example project illustrates the practice of contract-driven development and contract testing within a Flask (Python) application that relies on an external domain service. In this context, Specmatic is utilized to stub calls to domain API services according to its OpenAPI specification.
 
-Here is the Domain [OpenAPI spec](https://github.com/znsio/specmatic-order-contracts/blob/main/io/specmatic/examples/store/openapi/api_order_v3.yaml)
+Here is the Domain [OpenAPI spec](https://github.com/specmatic/specmatic-order-contracts/blob/main/io/specmatic/examples/store/openapi/api_order_v3.yaml)
 
-Here is the BFF [OpenAPI spec](https://github.com/znsio/specmatic-order-contracts/blob/main/io/specmatic/examples/store/openapi/product_search_bff_v4.yaml)
+Here is the BFF [OpenAPI spec](https://github.com/specmatic/specmatic-order-contracts/blob/main/io/specmatic/examples/store/openapi/product_search_bff_v4.yaml)
 
 ## Definitions
 
