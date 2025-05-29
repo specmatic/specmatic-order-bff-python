@@ -1,6 +1,6 @@
 coverage==7.8.2
 Flask==3.0.3
-marshmallow==3.22.0
+marshmallow==3.26.1
 pytest==8.3.5
 python-dotenv==1.0.1
 requests==2.32.3
