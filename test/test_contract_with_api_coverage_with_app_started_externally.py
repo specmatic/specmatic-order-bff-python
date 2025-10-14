@@ -12,13 +12,14 @@ class TestContract:
     pass
 
 
-Specmatic().with_project_root(ROOT_DIR).with_mock(
-    MOCK_HOST,
-    MOCK_PORT,
-    expectation_json_files,
-).test_with_api_coverage_for_flask_app(TestContract, APP, APP_HOST, APP_PORT).run()
-
-app_server.stop()
+try:
+    Specmatic().with_project_root(ROOT_DIR).with_mock(
+        MOCK_HOST,
+        MOCK_PORT,
+        expectation_json_files,
+    ).test_with_api_coverage_for_flask_app(TestContract, APP, APP_HOST, APP_PORT).run()
+finally:
+    app_server.stop()
 
 if __name__ == "__main__":
     pytest.main()
