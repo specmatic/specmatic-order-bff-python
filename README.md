@@ -4,7 +4,7 @@
 * [Specmatic Website](https://specmatic.io)
 * [Specmatic Documentation](https://specmatic.io/documentation.html)
 
-This example project illustrates the practice of contract-driven development and contract testing within a Flask (Python) application that relies on an external domain service. In this context, Specmatic is utilized to stub calls to domain API services according to its OpenAPI specification.
+This example project illustrates the practice of contract-driven development and contract testing within a Flask (Python) application that relies on an external domain service. In this context, Specmatic is utilized to mock calls to domain API services according to its OpenAPI specification.
 
 Here is the Domain [OpenAPI spec](https://github.com/specmatic/specmatic-order-contracts/blob/main/io/specmatic/examples/store/openapi/api_order_v3.yaml)
 
@@ -14,7 +14,7 @@ Here is the BFF [OpenAPI spec](https://github.com/specmatic/specmatic-order-cont
 
 * BFF: Backend for Frontend
 * Domain API: API managing the domain model
-* Specmatic Stub/Mock Server: Generate a server that simulates a real service using its OpenAPI or AsyncAPI specification
+* Specmatic Mock Server: Generate a server that simulates a real service using its OpenAPI or AsyncAPI specification
 
 ## Background
 
@@ -31,7 +31,7 @@ A standard web application setup may resemble the following structure. By levera
 
 ## Setup
 
-1. Install [Python 3.12](https://www.python.org/)
+1. Install [Python 3.11](https://www.python.org/)
 2. Install JRE 17 or later.
 
 ## Setup Virtual Environment

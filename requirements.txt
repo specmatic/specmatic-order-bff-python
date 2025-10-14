@@ -4,4 +4,4 @@ marshmallow==3.22.0
 pytest==8.3.5
 python-dotenv==1.0.1
 requests==2.32.3
-specmatic==2.24.0
+specmatic==2.26.1
