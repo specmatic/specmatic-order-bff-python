@@ -27,7 +27,7 @@ def stream_container_logs(container: DockerContainer, name=None):
 
 @pytest.fixture(scope="module")
 def order_api():
-    server = make_server("localhost", APPLICATION_PORT, app)
+    server = make_server("0.0.0.0", APPLICATION_PORT, app)
     thread = threading.Thread(target=server.serve_forever)
     thread.start()
     yield
@@ -62,9 +62,9 @@ def test_container():
     container = (
         DockerContainer("specmatic/specmatic")
         .with_command(["test", f"--host={APPLICATION_HOST}", f"--port={5000}"])
+        .with_env("SPECMATIC_GENERATIVE_TESTS", "true")
         .with_volume_mapping(specmatic_yaml_path, "/usr/src/app/specmatic.yaml", mode="ro")
         .with_volume_mapping(build_reports_path, "/usr/src/app/build/reports/specmatic", mode="rw")
-        .with_kwargs(extra_hosts={"host.docker.internal": "host-gateway"})
         .waiting_for(LogMessageWaitStrategy("Tests run:"))
     )
     container.start()
