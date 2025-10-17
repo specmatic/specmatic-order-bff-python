@@ -26,7 +26,7 @@ def stream_container_logs(container: DockerContainer, name=None):
 
 
 @pytest.fixture(scope="module")
-def order_api():
+def api_service():
     server = make_server("0.0.0.0", APPLICATION_PORT, app)
     thread = threading.Thread(target=server.serve_forever)
     thread.start()
@@ -73,7 +73,7 @@ def test_container():
     container.stop()
 
 
-def test_contract(order_api, stub_container, test_container):
+def test_contract(api_service, stub_container, test_container):
     stdout, stderr = test_container.get_logs()
     stdout = stdout.decode("utf-8")
     stderr = stderr.decode("utf-8")
