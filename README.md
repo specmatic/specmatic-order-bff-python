@@ -1,8 +1,7 @@
-
 # Specmatic Sample: Python-Flask BFF
 
 * [Specmatic Website](https://specmatic.io)
-* [Specmatic Documentation](https://specmatic.io/documentation.html)
+* [Specmatic Documentation](https://docs.specmatic.io)
 
 This example project illustrates the practice of contract-driven development and contract testing within a Flask (Python) application that relies on an external domain service. In this context, Specmatic is utilized to mock calls to domain API services according to its OpenAPI specification.
 
@@ -28,11 +27,13 @@ A standard web application setup may resemble the following structure. By levera
 2. Specmatic
 3. PyTest
 4. Coverage
+5. Docker Desktop
 
 ## Setup
 
 1. Install [Python 3.11](https://www.python.org/)
 2. Install JRE 17 or later.
+3. Install Docker Desktop
 
 ## Setup Virtual Environment
 
