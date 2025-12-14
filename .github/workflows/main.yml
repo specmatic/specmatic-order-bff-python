@@ -2,8 +2,10 @@ name: CI with contracts run through command line
 
 on:
   push:
-    branches: [main]
-
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+    
 jobs:
   build:
     strategy:
