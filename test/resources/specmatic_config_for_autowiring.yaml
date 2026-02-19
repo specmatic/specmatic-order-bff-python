@@ -14,7 +14,6 @@ dependencies:
           examples:
             - directories:
                 - ./test/data
-
 specmatic:
   governance:
     successCriteria:
@@ -50,10 +49,9 @@ components:
     productSearchBffServiceTest:
       openapi:
         type: test
-        baseUrl: "{APP_URL:http://localhost:5000}"
-        filter: "PATH!='/health'"
+        host: localhost
     orderApiServiceMock:
       openapi:
         type: mock
-        baseUrl: http://0.0.0.0:8080
+        host: localhost
 
