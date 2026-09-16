@@ -50,6 +50,7 @@ def specmatic_container():
         container
         .with_volume_mapping(str(Path.home() / ".specmatic"), "/specmatic", mode="ro")
         .with_env("SPECMATIC_LICENSE_PATH", "/specmatic/specmatic-license.txt")
+        .with_env("JAVA_OPTS", "-Dspecmatic.logging.level=trace -Dspecmatic.logging.stdout.enabled=true")
         .with_volume_mapping(str(PROJECT_ROOT_PATH), "/usr/src/app", mode="rw")
         .with_env("GIT_DISCOVERY_ACROSS_FILESYSTEM", "1")
         .with_env("GIT_CONFIG_COUNT", "1")
