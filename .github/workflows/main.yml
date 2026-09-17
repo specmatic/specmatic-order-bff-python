@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: python-wrapper
+          - name: pytest
             os: ubuntu-latest
             test-file: test/test_contract_with_coverage.py
           - name: testcontainers
