@@ -43,6 +43,7 @@ def api_service():
 
 def specmatic_container():
     container = DockerContainer("specmatic/specmatic")
+    host_user = f"{os.getuid()}:{os.getgid()}" if hasattr(os, "getuid") and hasattr(os, "getgid") else None
     for name, value in os.environ.items():
         container.with_env(name, value)
 
@@ -53,12 +54,10 @@ def specmatic_container():
         .with_env("JAVA_OPTS", "-Dspecmatic.logging.level=trace -Dspecmatic.logging.stdout.enabled=true")
         .with_volume_mapping(str(PROJECT_ROOT_PATH), "/usr/src/app", mode="rw")
         .with_env("GIT_DISCOVERY_ACROSS_FILESYSTEM", "1")
-        .with_env("GIT_CONFIG_COUNT", "1")
-        .with_env("GIT_CONFIG_KEY_0", "safe.directory")
-        .with_env("GIT_CONFIG_VALUE_0", "/usr/src/app")
         .with_kwargs(
             extra_hosts={"host.docker.internal": "host-gateway"},
             working_dir="/usr/src/app",
+            **({"user": host_user} if host_user else {}),
         )
     )
     return container
